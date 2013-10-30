@@ -1,3 +1,8 @@
+<% unless node[:stunnel][:fips].nil? -%>
+; Disable FIPS mode to allow non-approved protocols and algorithms
+fips = <%= node[:stunnel][:fips] ? 'yes' : 'no' %>
+<% end -%>
+
 ; certificate/key is needed in server mode and optional in client mode
 <% if node[:stunnel][:certificate_path] -%>
 cert = <%= node[:stunnel][:certificate_path] %>

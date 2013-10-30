@@ -20,6 +20,10 @@ default[:stunnel][:https][:enabled] = false
 default[:stunnel][:https][:accept_port] = "443"
 default[:stunnel][:https][:connect_port] = "81"
 
+# The FIPS option is unrecognized in versions prior to 4.56 and required
+# in 4.56 or newer. If non-nil, it will be written to the config.
+default[:stunnel][:fips] = nil
+
 default[:stunnel][:client_mode] = true
 
 default[:stunnel][:ssl_version] = 'all'
